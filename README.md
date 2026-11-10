@@ -70,14 +70,18 @@ android-app/          Android Studio projesi (Java)
     isaret_dili_beyni_v2.tflite   Eğitilmiş model
     holistic_landmarker.task      MediaPipe modeli
     SignList_ClassId_TR_EN.csv    Sınıf → kelime eşlemesi
-notebooks/            Google Colab defterleri
+notebooks/            Google Colab defterleri (sırayla çalıştırılır)
   01_koordinat_cikarma_mediapipe.ipynb   Videolardan landmark CSV'si üretme
-  02_model_egitimi_lstm.ipynb            Model eğitimi
-  03_model_analizi.ipynb                 Sınıf bazlı hata analizi
-  04_test_degerlendirme.ipynb            Test metrikleri
-  05_detayli_degerlendirme.ipynb         Karışıklık matrisi ve raporlar
-  06_tflite_donusumu.ipynb               Keras → TFLite dönüşümü
+  02_model_egitimi_v2.ipynb              Uygulamadaki modelin (v2) eğitimi
+  03_tflite_donusumu.ipynb               Keras (.h5) → TFLite dönüşümü
+  04_test_degerlendirme.ipynb            Test kümesinde metrikler
+  05_detayli_degerlendirme.ipynb         Karışıklık matrisi ve sınıf raporları
+  deneyler/                              Önceki model denemeleri (100 kare, 201 özellik)
+  requirements.txt                       Python bağımlılıkları
 ```
+
+### Geliştirme süreci
+İlk denemede (2 katmanlı LSTM, 100 kare, yalnızca koordinatlar) doğrulama başarısı ~%67'de kaldı. Kare sayısı 60'a indirilip ellerin yüze/omuza uzaklığı ve hareket hızı gibi 10 ek özellik eklendi, model 3 katmanlı LSTM'e büyütüldü. Bu v2 modelde doğrulama başarısı **%81.2**'ye, test başarısı **%78.4**'e çıktı.
 
 ## 🚀 Çalıştırma
 

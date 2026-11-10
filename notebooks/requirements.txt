@@ -1,0 +1,12 @@
+# Defterler Google Colab'da çalıştırıldı (Python 3.12).
+# 01_koordinat_cikarma_mediapipe ayrıca Python 3.9 + mediapipe 0.10.9 ile çalıştırıldı.
+tensorflow==2.16.1
+ml_dtypes==0.5.0
+numpy<2.0
+pandas
+scikit-learn
+matplotlib
+seaborn
+opencv-python-headless
+mediapipe==0.10.9
+patool
