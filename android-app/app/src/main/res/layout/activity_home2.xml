@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://tools.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F7"
+    tools:context=".HomeActivity2">
+
+  <LinearLayout
+      android:id="@+id/logoLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="32dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_apple_icon"
+        android:src="@android:drawable/ic_menu_compass"
+        app:tint="#1D1D1F"
+        android:padding="6dp"/>
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="TİD Tercümanı"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1D1D1F"
+        android:letterSpacing="-0.03" />
+  </LinearLayout>
+
+  <ImageButton
+      android:id="@+id/btnGenderToggle"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:background="@drawable/bg_apple_icon"
+      android:src="@android:drawable/ic_menu_myplaces"
+      app:tint="#1D1D1F"
+      android:alpha="0"
+      android:elevation="2dp"
+      app:layout_constraintEnd_toEndOf="@id/btnSettings"
+      app:layout_constraintTop_toTopOf="@id/btnSettings"
+      app:layout_constraintBottom_toBottomOf="@id/btnSettings" />
+
+  <ImageButton
+      android:id="@+id/btnThemeToggle"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:background="@drawable/bg_apple_icon"
+      android:src="@drawable/sign_language_xml"
+      app:tint="#1D1D1F"
+      android:alpha="0"
+      android:elevation="2dp"
+      app:layout_constraintEnd_toEndOf="@id/btnSettings"
+      app:layout_constraintTop_toTopOf="@id/btnSettings"
+      app:layout_constraintBottom_toBottomOf="@id/btnSettings" />
+
+  <ImageButton
+      android:id="@+id/btnSettings"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_marginEnd="24dp"
+      android:background="@drawable/bg_apple_icon"
+      android:src="@drawable/ayarlar"
+      app:tint="#1D1D1F"
+      android:elevation="4dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@id/logoLayout"
+      app:layout_constraintBottom_toBottomOf="@id/logoLayout" />
+
+  <com.google.android.material.card.MaterialCardView
+      android:id="@+id/cardVideo"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginTop="28dp"
+      android:layout_marginBottom="28dp"
+      app:cardCornerRadius="36dp"
+      app:cardElevation="8dp"
+      app:strokeWidth="0dp"
+      app:cardBackgroundColor="#FFFFFF"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/logoLayout"
+      app:layout_constraintBottom_toTopOf="@id/bottomButtonsLayout">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <View
+          android:id="@+id/videoPlaceholder"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#F5F5F7" />
+
+      <VideoView
+          android:id="@+id/videoView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center" />
+
+      <ImageView
+          android:id="@+id/ivPlayOverlay"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_gravity="center"
+          android:src="@android:drawable/ic_media_play"
+          app:tint="#1D1D1F" />
+
+      <TextView
+          android:id="@+id/tvGenderBadge"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|start"
+          android:layout_margin="20dp"
+          android:background="@drawable/bg_apple_icon"
+          android:paddingHorizontal="14dp"
+          android:paddingVertical="6dp"
+          android:text=""
+          android:textColor="#1D1D1F"
+          android:textSize="12sp"
+          android:textStyle="bold" />
+    </FrameLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <LinearLayout
+      android:id="@+id/bottomButtonsLayout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginBottom="32dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLearn"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        android:text="Kelimeler"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#1D1D1F"
+        android:backgroundTint="#FFFFFF"
+        app:elevation="2dp"
+        app:cornerRadius="28dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPractice"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:text="Test Et"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1D1D1F"
+        app:elevation="4dp"
+        app:cornerRadius="28dp" />
+  </LinearLayout>
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/settingsPanel"
+      android:layout_width="140dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:visibility="invisible"
+      app:cardCornerRadius="16dp"
+      app:cardElevation="12dp"
+      app:cardBackgroundColor="#FFFFFF"
+      app:layout_constraintEnd_toEndOf="@id/btnSettings"
+      app:layout_constraintTop_toBottomOf="@id/btnSettings">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+      <TextView
+          android:id="@+id/tvGenderLabel"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Erkek Video"
+          android:textColor="#1D1D1F"
+          android:textStyle="bold"
+          android:textSize="13sp" />
+      <TextView
+          android:id="@+id/tvThemeLabel"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="Koyu Tema"
+          android:textColor="#86868B"
+          android:textSize="13sp" />
+    </LinearLayout>
+  </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

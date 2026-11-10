@@ -1,0 +1,19 @@
+﻿# Android Studio / Gradle
+.gradle/
+build/
+.idea/
+*.iml
+local.properties
+.cxx/
+.externalNativeBuild/
+captures/
+
+# AUTSL lisansı gereği paylaşılmayan videolar
+android-app/app/src/main/res/raw/*.mp4
+
+# Rapor (yalnızca README'de özetlendi)
+*.pdf
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
